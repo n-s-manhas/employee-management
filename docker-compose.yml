@@ -1,0 +1,46 @@
+ version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8088:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=test1
+      - DB_USER=root
+      - DB_PASSWORD=password
+        #networks:
+        #- app-network
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: test1
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./test1.sql:/docker-entrypoint-initdb.d/test1.sql
+        #networks:
+        #- app-network
+
+volumes:
+  mysql_data:
+
+    #networks:
+    #app-network:
+    #driver: bridge
+    #ipam:
+    #  config:
+    #   - subnet: 172.20.0.0/16
+  
+                                    
+  
+                                   
