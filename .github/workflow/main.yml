@@ -55,8 +55,8 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            # Pull the latest Docker image
-            docker pull your-dockerhub-username/employee-management:${{ github.sha }}
+           #  Pull the latest Docker image
+             docker pull your-dockerhub-username/employee-management:${{ github.sha }}
             
             # Stop and remove old container
             docker stop my-app || true
