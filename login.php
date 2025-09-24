@@ -85,7 +85,7 @@ body{
 
 
 <div>
-<h2 class="text-white"><center><font size="10">Employee  Management System</font></center></h2>
+<h2 class="text-white"><center><font size="10">Farzi Management System</font></center></h2>
 
 </div><br>
 
@@ -125,6 +125,7 @@ body{
 </div>
 </body>
 </html>
+
 
 
 
